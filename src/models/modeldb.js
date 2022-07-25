@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
-const Mongo_URI =
-  "mongodb+srv://Mohamedfarhaan:mongodb1234@reactdb.ybaxk.mongodb.net/?retryWrites=true&w=majority";
+require("dotenv/config");
+const Mongo_URI = process.env.DB_URI;
+
 //connection
-mongoose.connect(Mongo_URI || "localhost://restdb", {
+mongoose.connect(Mongo_URI || "mongodb://restdb", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
